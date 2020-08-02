@@ -1,0 +1,27 @@
+{
+  "name": "sakura-plugins",
+  "version": "1.0.0",
+  "description": "Plugins server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassinrais/sakura-plugins.git"
+  },
+  "keywords": [
+    "sakura",
+    "sakura-plugins"
+  ],
+  "author": "Yassine Rais",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yassinrais/sakura-plugins/issues"
+  },
+  "homepage": "https://github.com/yassinrais/sakura-plugins#readme",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "server-static": "^2.0.5"
+  }
+}
