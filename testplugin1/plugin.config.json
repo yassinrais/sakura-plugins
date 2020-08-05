@@ -1,9 +1,0 @@
-{
-	"name":"testplugin1",
-	"title":"Test Plugin1",
-	"version":"3.1.0",
-	"author":"Yassin Rais",
-	"description":"This is an example of plugins 1 to manage discord servers & commands & events ",
-	"image":"https://cdn.iconscout.com/icon/free/png-256/discord-3-569463.png",
-	"require": {}
-}

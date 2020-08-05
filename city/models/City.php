@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SakuraPanel\Plugins\Country\Models;
+namespace SakuraPanel\Plugins\City\Models;
 
-class Country extends \ModelBase
+class City extends \ModelBase
 {
 
     /**
@@ -16,7 +16,31 @@ class Country extends \ModelBase
      *
      * @var string
      */
-    public $num;
+    public $name;
+
+    /**
+     *
+     * @var string
+     */
+    public $name_ascii;
+
+    /**
+     *
+     * @var double
+     */
+    public $lat;
+
+    /**
+     *
+     * @var double
+     */
+    public $lng;
+
+    /**
+     *
+     * @var string
+     */
+    public $country;
 
     /**
      *
@@ -28,19 +52,7 @@ class Country extends \ModelBase
      *
      * @var string
      */
-    public $iso3;
-
-    /**
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     *
-     * @var string
-     */
-    public $title;
+    public $admin_name;
 
     /**
      *
@@ -50,29 +62,23 @@ class Country extends \ModelBase
 
     /**
      *
-     * @var string
-     */
-    public $currency;
-
-    /**
-     *
      * @var integer
      */
-    public $phonecode;
+    public $population;
 
     /**
      * Initialize method for model.
      */
     public function initialize()
     {
-        $this->setSource($this->getSourceByName("sakura_country"));
+        $this->setSource($this->getSourceByName("sakura_cities"));
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Country[]|Country|\Phalcon\Mvc\Model\ResultSetInterface
+     * @return City[]|City|\Phalcon\Mvc\Model\ResultSetInterface
      */
     public static function find($parameters = null): \Phalcon\Mvc\Model\ResultsetInterface
     {
@@ -83,7 +89,7 @@ class Country extends \ModelBase
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Country|\Phalcon\Mvc\Model\ResultInterface
+     * @return City|\Phalcon\Mvc\Model\ResultInterface
      */
     public static function findFirst($parameters = null)
     {

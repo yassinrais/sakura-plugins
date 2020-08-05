@@ -2,21 +2,12 @@
 <!-- DataTales Example -->
   <div class="card shadow mt-0 mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold">Discord Bots List</h6>
+      <h6 class="m-0 font-weight-bold">Cities List</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-bordered" id="discordbots-dataTable" width="100%" cellspacing="0">
           <thead>
-            <th>#ID</th>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Note</th>
-            <th>Host</th>
-            <th>IP</th>
-            <th>Port</th>
-            <th>Status</th>
-            <th>Actions</th>
           </thead>
           <tfoot>
           </tfoot>
@@ -30,6 +21,7 @@
 
 <script type="text/javascript">
   window.addEventListener("DOMContentLoaded", (event) => {
+    $.fn.dataTable.ext.errMode = 'none';
     $('#discordbots-dataTable').DataTable({
         serverSide: true,
         ajax: {
@@ -37,15 +29,17 @@
             method: 'POST'
         },
         columns: [
-            {data: "id"},
-            {data: "name"},
-            {data: "title"},
-            {data: "note"},
-            {data: "hostname"},
-            {data: "ip"},
-            {data: "port"},
-            {data: "c_status"},
-            {data: "c_actions"}
+            { data: "id" , "title":"ID"},
+            { data: "name" , "title":"Name"},
+            {data: "name_ascii" , "title":"Name Ascii"},
+            {data: "population" , "title":"Population"},
+            {data: "lat" , "title":"Latitude"},
+            {data: "lng" , "title":"Longitude"},
+            {% if country_plugin is defined and country_plugin == true %}
+              {data: "country" , "title":"Country" , "searchable":false},
+            {% endif %}
+            {data: "c_status" , "title":"Status"},
+            {data: "c_actions" , "title":"Actions"}
         ]
     });
   });

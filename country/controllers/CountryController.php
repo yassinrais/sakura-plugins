@@ -11,7 +11,7 @@ use SakuraPanel\Plugins\Country\Models\{
 	Country
 };
 
-use SakuraPanel\Library\DataTable\DataTable;
+use SakuraPanel\Library\DataTables\DataTable;
 
 use SakuraPanel\Plugins\Country\Forms\CountryForm;
 
