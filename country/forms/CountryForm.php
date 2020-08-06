@@ -46,7 +46,7 @@ class CountryForm extends BaseForm
           [
             'required'=>true,
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'Country Title',
           ]
         );
          /**
@@ -58,7 +58,7 @@ class CountryForm extends BaseForm
           'num',
           [
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'Country Number',
           ]
         );
          /**
@@ -71,7 +71,7 @@ class CountryForm extends BaseForm
           [
             'required'=>true,
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'ISO-2',
           ]
         );
          /**
@@ -84,7 +84,7 @@ class CountryForm extends BaseForm
           [
             'required'=>true,
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'ISO-3',
           ]
         );
      
@@ -97,7 +97,7 @@ class CountryForm extends BaseForm
           'capital',
           [
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'Capital Name',
           ]
         );
 
@@ -110,7 +110,7 @@ class CountryForm extends BaseForm
           'currency',
           [
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'Currency',
           ]
         );
          /**
@@ -122,7 +122,7 @@ class CountryForm extends BaseForm
           'phonecode',
           [
             'class'=>"form-control",
-            'placeholder'=>'Country Name',
+            'placeholder'=>'Phone Code',
           ]
         );
      	

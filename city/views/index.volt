@@ -36,7 +36,9 @@
             {data: "lat" , "title":"Latitude"},
             {data: "lng" , "title":"Longitude"},
             {% if country_plugin is defined and country_plugin == true %}
-              {data: "country" , "title":"Country" , "searchable":false},
+              {data: "country" , "title":"Country"},
+              {% else %}
+              {data: "iso2" , "title":"Country ISO-2"},
             {% endif %}
             {data: "c_status" , "title":"Status"},
             {data: "c_actions" , "title":"Actions"}

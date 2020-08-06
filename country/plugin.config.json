@@ -1,7 +1,7 @@
 {
 	"name":"country",
 	"title":"Countries",
-	"version":"1.0.0",
+	"version":"1.0.1",
 	"author":"Yassin Rais",
 	"description":"This plugin is a shared country models to use with others plugins ",
 	"image":"https://i.imgur.com/WRn5vhM.png"

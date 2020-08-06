@@ -21,7 +21,7 @@ use SakuraPanel\Plugins\City\Forms\CityForm;
 class CityController extends MemberControllerBase
 {
 	private $country_plugin = false;
-	private $dataTables_columns = 'c.id as id,c.name as name, c.status as status , population, lat,lng';
+	private $dataTables_columns = 'c.id as id,c.name as name, name_ascii, c.status as status , population, lat,lng, c.iso2 as iso2';
 
 	public function initialize(){
 		parent::initialize();
@@ -142,6 +142,7 @@ class CityController extends MemberControllerBase
 			$dataTables->fromBuilder($builder, [
 				['c.status', 'alias'=>'status'],
 				['c.id','alias'=>'id'],
+				['c.iso2','alias'=>'iso2'],
 				['c.name','alias'=>'name'],
 				['ct.title','alias'=>'country'],
 

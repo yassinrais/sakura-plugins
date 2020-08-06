@@ -25,7 +25,10 @@ $plugin->addRoute(
 		"url"=>"member/country",
 		"access"=>"admins",
 	]
-);
+)->addSql([
+	'install'=>dirname(__FILE__).'/sql/install.sql',
+	'delete'=>dirname(__FILE__).'/sql/delete.sql'
+]);
 
 
 return $plugin;

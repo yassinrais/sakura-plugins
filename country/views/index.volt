@@ -34,6 +34,8 @@
             {data: "iso3" , "title":"ISO-3"},
             {data: "name" , "title":"Name"},
             {data: "title" , "title":"Title"},
+            {data: "currency" , "title":"Currency"},
+            {data: "capital" , "title":"Capital"},
             {data: "c_status" , "title":"Status"},
             {data: "c_actions" , "title":"Actions"}
         ]

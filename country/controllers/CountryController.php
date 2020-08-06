@@ -21,6 +21,8 @@ use SakuraPanel\Plugins\Country\Forms\CountryForm;
 class CountryController extends MemberControllerBase
 {
 
+	private $dataTables_columns = 'id, name, title, [iso2], iso3, num, status, currency , capital';
+
 	public function initialize(){
 		parent::initialize();
 		
@@ -118,7 +120,7 @@ class CountryController extends MemberControllerBase
 	{
 		if ($this->request->isAjax()) {
           $builder = $this->modelsManager->createBuilder()
-                          ->columns('id, name, title, [iso2], iso3, num, status')
+                          ->columns($this->dataTables_columns)
                           ->from(Country::class);
 
           $dataTables = new DataTable();
