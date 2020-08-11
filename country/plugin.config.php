@@ -17,7 +17,7 @@ $plugin->addRoute(
 	    'access' => ['admins' => ['*'] ]
 	]
 )->addMenu(
-	"Admin",
+	"Geo",
 	"country",
 	[
 		"title"=>"Countries",
