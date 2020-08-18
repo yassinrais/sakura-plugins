@@ -24,6 +24,7 @@
     $.fn.dataTable.ext.errMode = 'none';
     $('#discordbots-dataTable').DataTable({
         serverSide: true,
+        searchDelay: 1000,
         ajax: {
             url: '{{ url(page.get('base_route') ~ '/ajax') }}',
             method: 'POST'
