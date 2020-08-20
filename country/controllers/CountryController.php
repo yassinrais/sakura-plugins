@@ -158,7 +158,7 @@ class CountryController extends MemberControllerBase
           })
           ->sendResponse();
         }
-		return  $this->ajax->error('Method Ajax is only allowed')->sendresponse();
+		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
 
 	public function deleteAction()
@@ -169,16 +169,16 @@ class CountryController extends MemberControllerBase
 			$row = Country::findFirstById($id);
 
 			if (!$row) 
-				return  $this->ajax->error('Unknown row id '.$id)->sendresponse();
+				return  $this->ajax->error('Unknown row id '.$id)->sendResponse();
 
 			$row->status = $this::DELETED;
 			if ($row->delete())
-				return  $this->ajax->error("Row $id deleted successfully !")->sendresponse();
+				return  $this->ajax->error("Row $id deleted successfully !")->sendResponse();
 			
-			return  $this->ajax->error("Row $id deleted failed ! \n".implode("&", $row->getMessages()))->sendresponse();
+			return  $this->ajax->error("Row $id deleted failed ! \n".implode("&", $row->getMessages()))->sendResponse();
 
         }
-		return  $this->ajax->error('Unknown error')->sendresponse();
+		return  $this->ajax->error('Unknown error')->sendResponse();
 	}
 
 	public function restoreAction()
@@ -189,15 +189,15 @@ class CountryController extends MemberControllerBase
 			$row = Country::findFirstById($id);
 
 			if (!$row)
-				return  $this->ajax->error('Unknown row id '.$id)->sendresponse();
+				return  $this->ajax->error('Unknown row id '.$id)->sendResponse();
 			
 			$row->status = $this::INACTIVE;
 			if ($row->save())
-				return  $this->ajax->error("Row $id restore successfully !")->sendresponse();
+				return  $this->ajax->error("Row $id restore successfully !")->sendResponse();
 			
-			return  $this->ajax->error("Row $id restore failed ! \n".implode("&", $row->getMessages()))->sendresponse();
+			return  $this->ajax->error("Row $id restore failed ! \n".implode("&", $row->getMessages()))->sendResponse();
         }
-		return  $this->ajax->error('Unknown error')->sendresponse();
+		return  $this->ajax->error('Unknown error')->sendResponse();
 	}
 
 

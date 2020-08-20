@@ -182,54 +182,46 @@ class CityController extends MemberControllerBase
 
 	public function deleteAction()
 	{
-		$resp = $this::jsonStatus('error','Unknown error','danger');
 		if ($this->request->isAjax()) {
 			$id = (int) $this->request->get('id');
 
 			$row = City::findFirstById($id);
 
-			if (!$row) {
-				$resp = $this::jsonStatus('error','Unknown row id '.$id,'danger');
-			}else{
-				$row->status = $this::DELETED;
+			if (!$row) 
+				return  $this->ajax->error('Unknown row id '.$id)->sendResponse();
 
-				if ($row->delete()) {
-					$resp = $this::jsonStatus('success',"Row $id deleted successfully !",'success');
-				}else{
-					$resp = $this::jsonStatus('error',"Row $id deleted failed ! \n".implode("&", $row->getMessages()),'warning');
-				}
-			}
+			$row->status = $this::DELETED;
+			if ($row->delete())
+				return  $this->ajax->error("Row $id deleted successfully !")->sendResponse();
+			
+			return  $this->ajax->error("Row $id deleted failed ! \n".implode("&", $row->getMessages()))->sendResponse();
 
-          	$this->response->setJsonContent($resp);
-
-          	return $this->response;
         }
+		return  $this->ajax->error('Unknown error')->sendResponse();
 	}
 
 	public function restoreAction()
 	{
-		$resp = $this::jsonStatus('error','Unknown error','danger');
 		if ($this->request->isAjax()) {
 			$id = (int) $this->request->get('id');
 
 			$row = City::findFirstById($id);
 
 			if (!$row) {
-				$resp = $this::jsonStatus('error','Unknown row id '.$id,'danger');
-			}else{
-				$row->status = $this::INACTIVE;
+				return $this->ajax->error('Unknown row id '.$id)->sendResponse();
+			
+			$row->status = $this::INACTIVE;
 
-				if ($row->save()) {
-					$resp = $this::jsonStatus('success',"Row $id restore successfully !",'success');
-				}else{
-					$resp = $this::jsonStatus('error',"Row $id restore failed ! \n".implode("&", $row->getMessages()),'warning');
-				}
-			}
+			if ($row->save()) 
+				return $this->ajax->success("Row $id restore successfully !")->sendResponse();
+			
+		
+			return $this->ajax->error("Row $id restore failed ! \n".implode("&", $row->getMessages()))->sendResponse();
+			
 
-          	$this->response->setJsonContent($resp);
-
-          	return $this->response;
         }
+	
+		return $this->ajax->error('Unknown error')->sendResponse();
 	}
 
 
