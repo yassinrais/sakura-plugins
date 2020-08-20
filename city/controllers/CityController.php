@@ -120,7 +120,7 @@ class CityController extends MemberControllerBase
 
 	public function ajaxAction()
 	{
-		// if ($this->request->isAjax()) {
+		if ($this->request->isAjax()) {
 			$builder = $this->modelsManager->createBuilder()
                   ->addFrom(City::class ,'c')
                   ->columns($this->dataTables_columns);
@@ -175,9 +175,11 @@ class CityController extends MemberControllerBase
 
 
 				return $actions;
-			})
-			->sendResponse();
-        // }
+			});
+          	return $dataTables->sendResponse();
+        }
+		
+		return $this->ajax->error('Only Ajax Method Allowed')->sendResponse();
 	}
 
 	public function deleteAction()
@@ -197,7 +199,7 @@ class CityController extends MemberControllerBase
 			return  $this->ajax->error("Row $id deleted failed ! \n".implode("&", $row->getMessages()))->sendResponse();
 
         }
-		return  $this->ajax->error('Unknown error')->sendResponse();
+		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
 
 	public function restoreAction()
@@ -207,7 +209,7 @@ class CityController extends MemberControllerBase
 
 			$row = City::findFirstById($id);
 
-			if (!$row) {
+			if (!$row)
 				return $this->ajax->error('Unknown row id '.$id)->sendResponse();
 			
 			$row->status = $this::INACTIVE;
@@ -221,7 +223,7 @@ class CityController extends MemberControllerBase
 
         }
 	
-		return $this->ajax->error('Unknown error')->sendResponse();
+		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
 
 

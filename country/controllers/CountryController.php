@@ -155,8 +155,10 @@ class CountryController extends MemberControllerBase
 
 
           	return $actions;
-          })
-          ->sendResponse();
+          });
+
+          
+          return $dataTables->sendResponse();
         }
 		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
@@ -178,7 +180,7 @@ class CountryController extends MemberControllerBase
 			return  $this->ajax->error("Row $id deleted failed ! \n".implode("&", $row->getMessages()))->sendResponse();
 
         }
-		return  $this->ajax->error('Unknown error')->sendResponse();
+		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
 
 	public function restoreAction()
@@ -197,7 +199,7 @@ class CountryController extends MemberControllerBase
 			
 			return  $this->ajax->error("Row $id restore failed ! \n".implode("&", $row->getMessages()))->sendResponse();
         }
-		return  $this->ajax->error('Unknown error')->sendResponse();
+		return  $this->ajax->error('Method Ajax is only allowed')->sendResponse();
 	}
 
 
