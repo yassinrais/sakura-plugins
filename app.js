@@ -33,14 +33,33 @@ const getPlugins = (config = {})=>{
 			fs.readdirSync(cd).filter(function (f) {
 		    	if (f == config.plugin_name){
 		    		// is a plugin
+		    		let plugin_config_file_json = d  +'/' + f;
 		    		let zip_dist = zipFolder +d+'.zip';
-		    		
-		    		plugins[d] = {
-		    			'path': d  +'/' + f,
+
+		    		let data = fs.readFileSync(plugin_config_file_json , 'utf8');
+	    			try{
+	    				let j = JSON.parse(data);
+	    				j.zip = zip_dist;
+
+	    				j = JSON.stringify(j);
+
+	    				if (j != undefined && j != null)
+		    				fs.writeFileSync(plugin_config_file_json , j , (e)=>{
+		    					if (e != null)
+		    						console.log(e);
+	    					});
+	    			}catch(e){
+	    				console.log('[',plugin_config_file_json,'] Error Updating config plugin',e);
+	    			}
+
+	    			plugins[d] = {
+		    			'path': plugin_config_file_json,
 		    			'zip': zip_dist,
 		    			'config': require(cd + '/'+ f)
 		    		}
 		    		zipFolderFiles(d +'/' , zip_dist);
+
+		    		
 
 		    	}
 		    });
