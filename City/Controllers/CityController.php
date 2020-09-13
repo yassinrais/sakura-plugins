@@ -30,7 +30,7 @@ class CityController extends MemberControllerBase
 		$this->page->set('title', 'Cities');
         $this->page->set('description','Here you can manager all city information.');
 		
-		$this->view->country_plugin = $this->country_plugin = $this->plugins->has('country');
+		$this->view->country_plugin = $this->country_plugin = $this->plugins->has('Country');
         $this->view->dataTable = true;
 
 	}
