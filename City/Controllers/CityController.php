@@ -11,7 +11,7 @@ use SakuraPanel\Plugins\City\Models\{
 	City
 };
 
-use SakuraPanel\Library\DataTables\DataTable;
+use SakuraPanel\Library\Datatables\DataTable;
 
 use SakuraPanel\Plugins\City\Forms\CityForm;
 
