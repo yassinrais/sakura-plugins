@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace SakuraPanel\Plugins\Country\Models;
 
-class Country extends \ModelBase
+use SakuraPanel\Models\ModelBase;
+
+class Country extends ModelBase
 {
 
     /**
