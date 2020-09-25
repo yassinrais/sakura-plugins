@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace SakuraPanel\Plugins\City\Models;
 
-class City extends \ModelBase
+use \SakuraPanel\Models\ModelBase;
+
+class City extends ModelBase
 {
 
     /**

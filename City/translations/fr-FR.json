@@ -1,0 +1,13 @@
+{
+    "Population":"Population",
+    "Latitude":"Latitide",
+    "Longitude":"Longitude",
+    "Country":"Pays",
+    "Country ISO-2":"Code ISO-2",
+    "Status":"Statut",
+
+
+    "Cities":"Les Villes",
+    "Here you can manag all city information":"Ici vous pouvez gérer toutes les informations de la ville",
+    "Cities List":"Liste des villes"
+}
