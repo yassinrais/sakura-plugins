@@ -1,0 +1,11 @@
+{
+    "Country":"Pays",
+    "Title":"Titre",
+    "Status":"Statut",
+    "Currency":"Devise",
+    "Capital":"Capitale",
+
+
+    "Here you can manag all country information":"Ici vous pouvez gérer toutes les informations de les pays",
+    "Cities List":"Liste des villes"
+}
